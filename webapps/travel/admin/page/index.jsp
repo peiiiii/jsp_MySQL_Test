@@ -233,33 +233,33 @@
         switch (click_text) {
           case "修改":
               var id = $(this).attr("id").split("edit")[1];
-              $("#name" + id).html('<input type="text" name="name" id ="input_name' + id + '"value="' + $("#name" +id).text() +'"/>');
-              $("#photo" + id).html('<input type="text" name="photo" id ="input_photo' + id + '"value="' + $("#photoURL" +id).attr("src") +'"/>');
-              $("#location" + id).html('<input type="text" name="location" id ="input_location' + id + '"value="' + $("#location" +id).text() +'"/>');
-              $("#description" + id).html('<textarea name="description" id ="input_description' + id + '"value="' + $("#description" +id).text() +'"/>');
+              $("#name"+id).html('<input type="text" name="name" id="input_name'+id+'"value="'+$("#name"+id).text()+'"/>');
+              $("#photo"+id).html('<input type="text" name="photo" id="input_photo'+id+'"value="'+$("#photoURL"+id).attr("src")+'"/>');
+              $("#location"+id).html('<input type="text" name="location" id="input_location'+id+'"value="'+$("#location"+id).text()+'"/>');
+              $("#description"+id).html('<input type="textarea" name="description" id="input_description'+id+'"value="'+$("#description"+id).text()+'"/>');
               $(this).attr("id","storeEdit"+id);
               $(this).html("儲存");
             break;
           case "儲存":
-            var id = $(this).attr("id").split("storeEdit")[1];
-            var name = $("#input_name" + id).val();
-            var location = $("#input_location" + id).val();
-            var description = $("#input_description" + id).val();
-            var photo = $("#input_photo" + id).val();
-            $("#name" + id).html(name);
-            $("#location" + id).html(location);
-            $("#description" + id).html(description);
-            $("#photo" + id).html('<img id = "photoURL1"' + id + '"src=" '+ photo +'" width=50>');
-            $(this).attr("id","edit"+id);
-            $(this).html("修改");
-            var id_input = $("<input>").attr("type","hidden").attr("name","id").val(id);
-            //$("#form" +id).append(id_input);
-            //$("#form" +id).append($("#input_name" + id));
-            //$("#form" +id).append($("#input_location" + id));
-            //$("#form" +id).append($("#input_photo" + id));
-            //$("#form" +id).append($("#input_description" + id));
-            //$("#form" +id).submit();
-          break;
+              var id = $(this).attr("id").split("storeEdit")[1];
+              var name = $("#input_name"+id).val();
+              var photo = $("#input_photo"+id).val();
+              var location = $("#input_location"+id).val();
+              var description = $("#input_description"+id).val();
+              // $("#name"+id).html(name);
+              // $("#photo"+id).html('<img id = "photoURL"'+ id +'src="'+photo+'" width=50>');
+              // $("#location"+id).html(location);
+              // $("#description"+id).html(description);
+              // $(this).attr("id","edit"+id);
+              // $(this).html("修改");
+              var id_input = $("<input>").attr("type","hidden").attr("name","id").val(id);
+              $("#form"+id).append(id_input);
+              $("#form"+id).append($("#input_name"+id));
+              $("#form"+id).append($("#input_photo"+id));
+              $("#form"+id).append($("#input_location"+id));
+              $("#form"+id).append($("#input_description"+id));
+              $("#form"+id).submit();
+            break;
 
           case"刪除":
             var id = $(this).attr("id").split("delete")[1];
